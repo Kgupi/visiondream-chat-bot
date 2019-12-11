@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.less"
             ],
             "scripts": []
@@ -67,11 +68,13 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "visiondream-chat-bot:build"
+            "browserTarget": "visiondream-chat-bot:build",
+			"port": 44315
           },
           "configurations": {
             "production": {
-              "browserTarget": "visiondream-chat-bot:build:production"
+              "browserTarget": "visiondream-chat-bot:build:production",
+			  "port": 44316
             }
           }
         },
@@ -93,6 +96,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.less"
             ],
             "scripts": []
@@ -122,8 +126,13 @@
               "devServerTarget": "visiondream-chat-bot:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "visiondream-chat-bot"
 }
